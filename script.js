@@ -1,7 +1,8 @@
 const testo = document.querySelector('#texto-tarefa');
 const recebeLi = document.querySelector('#lista-tarefas');
 const botao = document.querySelector('#criar-tarefa');
-const cor = document.querySelector
+const botaoApagarTudo = document.querySelector('#apaga-tudo');
+
 
 function area() {
    let elemento = document.createElement('li');
@@ -18,6 +19,8 @@ function area() {
 botao.addEventListener('click', area);
 
 
-function nome() {
+function apagarTudo() {
+
 
 }
+botaoApagarTudo.addEventListener('click',apagarTudo);
