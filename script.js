@@ -4,23 +4,39 @@ const botao = document.querySelector('#criar-tarefa');
 const botaoApagarTudo = document.querySelector('#apaga-tudo');
 
 
-function area() {
-   let elemento = document.createElement('li');
+function adicionarLi() {
+   const elemento = document.createElement('li');
    elemento.innerText = testo.value
-   recebeLi.appendChild(elemento)  
+   recebeLi.appendChild(elemento) 
+   elemento.className = 'selecao'
    testo.value = '';
-   elemento.addEventListener('click', 
    
-   function clicou(){
-     elemento.className = 'selecao'; 
-   })
-}
+recebeLi.addEventListener('click', function (event){
+    if (event.target.id !== 'lista-tarefas') {
+      for (let i = 0; i <recebeLi.children.length; i += 1) {
+        if (recebeLi.children[i].style.backgroundColor === 'rgb(128, 128, 128)') {
+        recebeLi.children[i].style.backgroundColor = '';
+        }
+      }
+      event.target.style.backgroundColor = 'rgb(128, 128, 128)'; // fundo cinza na tarefa selecionada
+    }
+  });
+      
+    }   
 
-botao.addEventListener('click', area);
 
 
-function apagarTudo() {
+botao.addEventListener('click', adicionarLi);
 
 
-}
-botaoApagarTudo.addEventListener('click',apagarTudo);
+//   recebeLi.addEventListener('dbclick',function (event){
+//         for(let index = 0;index < recebeLi.length;index += 0){
+//             if(event.target.classList.contain('selecao')){
+//                 event.target.classList.remove('selecao')
+                
+//             }else{
+//                 event.target.classList.add('selecao');
+//             }
+//        }
+//     }
+// }
