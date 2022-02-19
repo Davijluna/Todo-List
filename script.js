@@ -13,7 +13,7 @@ function adicionarLi() {
    
 recebeLi.addEventListener('click', function (event){
     if (event.target.id !== 'lista-tarefas') {
-      for (let i = 0; i <recebeLi.children.length; i += 1) {
+      for (let i = 0; i < recebeLi.children.length; i += 1) {
         if (recebeLi.children[i].style.backgroundColor === 'rgb(128, 128, 128)') {
         recebeLi.children[i].style.backgroundColor = '';
         }
@@ -23,20 +23,13 @@ recebeLi.addEventListener('click', function (event){
   });
       
     }   
-
-
-
 botao.addEventListener('click', adicionarLi);
 
-
-//   recebeLi.addEventListener('dbclick',function (event){
-//         for(let index = 0;index < recebeLi.length;index += 0){
-//             if(event.target.classList.contain('selecao')){
-//                 event.target.classList.remove('selecao')
-                
-//             }else{
-//                 event.target.classList.add('selecao');
-//             }
-//        }
-//     }
-// }
+recebeLi.addEventListener('dblclick',function (event){
+    const eventoAlvo = event.target;
+    if(eventoAlvo.classList.contains('completed')){
+     eventoAlvo.classList.remove('completed');
+    }else{
+    eventoAlvo.classList.add('completed');
+    }
+})
